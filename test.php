@@ -1,1 +1,0 @@
-<?php echo "CampusPlay is alive at " . date('H:i:s'); ?>
