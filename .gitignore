@@ -1,0 +1,36 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment secrets
+.env
+.env.local
+config.local.php
+
+# Node (if you ever add it)
+node_modules/
+package-lock.json
+
+# Composer (if you ever add it)
+vendor/
+
+# Temporary / build
+*.tmp
+*.bak
+dist/
+build/
+
+# Personal notes (do NOT commit your personal scratch files)
+notes/
+scratch/
