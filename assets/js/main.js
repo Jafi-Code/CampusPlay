@@ -20,6 +20,7 @@
     setupBackToTop();
     setupPWAInstall();
     setupSportFilter();
+    setupJoinModal();
     setupContactForm();
   }
 
@@ -184,7 +185,65 @@
   }
 
   /* ---------------------------------------------------------
-       6. Contact form validation  (contact.php)
+       6. Join sport modal  (sports.php)
+       Opens a dialog with joining instructions for the selected sport.
+       --------------------------------------------------------- */
+  function setupJoinModal() {
+    const modal = document.getElementById("joinModal");
+    const nameSpan = document.getElementById("joinSportName");
+    const contactBtn = document.getElementById("joinContactBtn");
+    if (!modal || !nameSpan || !contactBtn) return;
+
+    const triggers = document.querySelectorAll(".btn-join-sport");
+    const closeBtn = modal.querySelector(".join-modal-close");
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const sport = trigger.dataset.sport || "this sport";
+        nameSpan.textContent = sport;
+        contactBtn.href = "contact.php?sport=" + encodeURIComponent(sport);
+
+        if (typeof modal.showModal === "function") {
+          modal.showModal();
+        } else {
+          modal.setAttribute("open", "");
+        }
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        if (typeof modal.close === "function") {
+          modal.close();
+        } else {
+          modal.removeAttribute("open");
+        }
+      });
+    }
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        if (typeof modal.close === "function") {
+          modal.close();
+        } else {
+          modal.removeAttribute("open");
+        }
+      }
+    });
+
+    modal.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        if (typeof modal.close === "function") {
+          modal.close();
+        } else {
+          modal.removeAttribute("open");
+        }
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------
+       7. Contact form validation  (contact.php)
        Client-side feedback. The server still validates everything.
        --------------------------------------------------------- */
   function setupContactForm() {

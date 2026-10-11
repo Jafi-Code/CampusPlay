@@ -124,7 +124,7 @@ include 'includes/header.php';
         <div class="vertical-video-grid">
             <article class="vertical-video">
                 <div class="vertical-video-frame">
-                    <video controls playsinline preload="metadata" poster="assets/images/sports/sport-rugby.jpg">
+                    <video autoplay muted loop playsinline preload="metadata" poster="assets/images/sports/sport-rugby.jpg">
                         <source src="assets/video/vut-rugby.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
@@ -135,7 +135,7 @@ include 'includes/header.php';
 
             <article class="vertical-video">
                 <div class="vertical-video-frame">
-                    <video controls playsinline preload="metadata" poster="assets/images/sports/sport-soccer.jpg">
+                    <video autoplay muted loop playsinline preload="metadata" poster="assets/images/sports/sport-soccer.jpg">
                         <source src="assets/video/vut-soccer.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
@@ -146,7 +146,7 @@ include 'includes/header.php';
 
             <article class="vertical-video">
                 <div class="vertical-video-frame">
-                    <video controls playsinline preload="metadata" poster="assets/images/sports/sport-netball.jpg">
+                    <video autoplay muted loop playsinline preload="metadata" poster="assets/images/sports/sport-netball.jpg">
                         <source src="assets/video/vut-netball.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
