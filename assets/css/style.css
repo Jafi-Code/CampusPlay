@@ -1041,6 +1041,106 @@ details.accordion p {
   flex-wrap: wrap;
 }
 
+/* ---------- Video embed (16:9 iframe wrapper) ---------- */
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin: var(--space-lg) 0 var(--space-sm);
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Checklist ---------- */
+.checklist-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+.checklist {
+  background: #fff;
+  border: 1px solid var(--grey-light);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+}
+.checklist-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--navy);
+}
+.checklist-header h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.5rem;
+}
+.checklist-header p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+.checklist-block {
+  margin-bottom: var(--space-lg);
+}
+.checklist-block h3 {
+  color: var(--navy);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--grey-light);
+}
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--grey-light);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.check-list li:last-child { border-bottom: none; }
+.check-box {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+  margin-top: 2px;
+  display: inline-block;
+}
+.checklist-footer {
+  border-top: 1px solid var(--grey-light);
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+.checklist-footer p { margin: 4px 0; }
+.checklist address { font-style: normal; }
+.checklist address p {
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
@@ -1215,4 +1315,49 @@ details.accordion p {
 }
 .content-block .btn {
   margin-top: 8px;
+}
+
+/* =========================================================
+   PRINT STYLES
+   Only the printable checklist remains visible when printing.
+   ========================================================= */
+@media print {
+  .site-header,
+  .site-footer,
+  .pilot-bar,
+  .back-to-top,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .page-hero { display: none; }
+
+  .section { padding: 0; }
+
+  .checklist {
+    border: none;
+    padding: 0;
+  }
+
+  .checklist-block {
+    page-break-inside: avoid;
+  }
+
+  .check-list li {
+    page-break-inside: avoid;
+  }
+
+  a { color: #000; text-decoration: none; }
+  a[href]::after { content: ""; }
 }
