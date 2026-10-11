@@ -1,0 +1,46 @@
+{
+  "name": "CampusPlay - Find Your Game",
+  "short_name": "CampusPlay",
+  "description": "Discover campus sports, learn how to join, and find your people.",
+  "start_url": "/campusplay/index.php",
+  "scope": "/campusplay/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#17243B",
+  "background_color": "#F6F7F9",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["sports", "education", "health"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Explore Sports",
+      "url": "/campusplay/sports.php",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "How to Join",
+      "url": "/campusplay/how-to-join.php",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
