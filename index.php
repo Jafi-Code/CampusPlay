@@ -113,24 +113,53 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- Video -->
-<section class="section">
-    <div class="container content-narrow" style="text-align:center;">
+<!-- Training in action -->
+<section class="section section-alt">
+    <div class="container">
         <div class="section-header">
-            <h2>Life on Campus</h2>
-            <p>A short look at what training and match days feel like at CampusPlay.</p>
+            <h2>Training in Action</h2>
+            <p>A look at what training looks like across different sport codes at VUT.</p>
         </div>
 
-        <video
-            class="feature-video"
-            controls
-            playsinline
-            preload="metadata"
-            poster="assets/images/hero-sports.jpg">
-            <source src="assets/video/campusplay-highlight.mp4" type="video/mp4">
-            Your browser does not support the video element.
-            <a href="assets/video/campusplay-highlight.mp4">Download the video</a>.
-        </video>
+        <div class="vertical-video-grid">
+            <article class="vertical-video">
+                <div class="vertical-video-frame">
+                    <video controls playsinline preload="metadata" poster="assets/images/sports/sport-rugby.jpg">
+                        <source src="assets/video/vut-rugby.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+                <h3>Rugby Training</h3>
+                <p>Weekly sessions at the main field.</p>
+            </article>
+
+            <article class="vertical-video">
+                <div class="vertical-video-frame">
+                    <video controls playsinline preload="metadata" poster="assets/images/sports/sport-soccer.jpg">
+                        <source src="assets/video/vut-soccer.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+                <h3>Soccer Practice</h3>
+                <p>Floodlit evening sessions.</p>
+            </article>
+
+            <article class="vertical-video">
+                <div class="vertical-video-frame">
+                    <video controls playsinline preload="metadata" poster="assets/images/sports/sport-netball.jpg">
+                        <source src="assets/video/vut-netball.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+                <h3>Netball Drills</h3>
+                <p>Beginner sessions available every week.</p>
+            </article>
+        </div>
+
+        <p class="video-attribution">
+            Video content courtesy of VUT Sport.
+            Follow <a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer">@vut.sports on TikTok</a> for more.
+        </p>
     </div>
 </section>
 

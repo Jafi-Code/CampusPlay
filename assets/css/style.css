@@ -672,13 +672,6 @@ tbody tr:hover {
   margin-bottom: 10px;
   color: #c9d2de;
 }
-.footer-col .footer-note {
-  font-size: 0.85rem;
-  color: #8a98ae;
-  margin-top: var(--space-sm);
-  line-height: 1.5;
-  max-width: 320px;
-}
 .footer-col p i {
   color: var(--orange);
   margin-right: 8px;
@@ -845,6 +838,101 @@ details.accordion p {
   margin: 0 auto;
 }
 
+/* ---------- Pilot bar ---------- */
+.pilot-bar {
+  background: var(--orange);
+  color: #fff;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 16px;
+}
+.pilot-bar strong { font-weight: 700; }
+.pilot-bar a { color: #fff; text-decoration: underline; font-weight: 600; }
+.pilot-bar a:hover { color: var(--navy); }
+
+/* ---------- Footer note ---------- */
+.footer-col .footer-note {
+  font-size: 0.85rem;
+  color: #8a98ae;
+  margin-top: var(--space-sm);
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+/* ---------- Vertical video grid ---------- */
+.vertical-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.vertical-video { text-align: center; }
+.vertical-video-frame {
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-sm);
+}
+.vertical-video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vertical-video h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: var(--navy);
+}
+.vertical-video p {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  margin: 0;
+}
+.video-attribution {
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+/* ---------- Content page typography ---------- */
+.content-block {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.content-block h2 { margin-top: var(--space-lg); }
+.content-block h2:first-child { margin-top: 0; }
+.content-block ul,
+.content-block ol {
+  padding-left: 24px;
+  margin-bottom: var(--space-md);
+}
+.content-block li {
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+/* ---------- Info cards ---------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+.info-card {
+  background: #fff;
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--grey-light);
+}
+.info-card h3 { color: var(--navy); margin-bottom: 8px; }
+.info-card p { color: var(--text-soft); font-size: 0.95rem; margin: 0; }
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
@@ -859,6 +947,7 @@ details.accordion p {
 }
 
 @media (max-width: 860px) {
+  .vertical-video-grid { grid-template-columns: 1fr; max-width: 320px; }
   .hero-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -984,21 +1073,4 @@ details.accordion p {
   color: #c9d2de;
   font-size: 1.1rem;
   margin-bottom: var(--space-lg);
-}
-/* ---------- Pilot bar ---------- */
-.pilot-bar {
-  background: var(--orange);
-  color: #fff;
-  text-align: center;
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 8px 16px;
-}
-.pilot-bar a {
-  color: #fff;
-  text-decoration: underline;
-  font-weight: 600;
-}
-.pilot-bar a:hover {
-  color: var(--navy);
 }
