@@ -27,7 +27,9 @@ $pageTitle = $pageTitle ?? t('nav_home');
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
-
+<div class="pilot-bar">
+    CampusPlay is currently live at <strong>Vaal University of Technology</strong>. More campuses coming soon.
+</div>
 <header class="site-header">
     <div class="container header-inner">
 

@@ -672,6 +672,13 @@ tbody tr:hover {
   margin-bottom: 10px;
   color: #c9d2de;
 }
+.footer-col .footer-note {
+  font-size: 0.85rem;
+  color: #8a98ae;
+  margin-top: var(--space-sm);
+  line-height: 1.5;
+  max-width: 320px;
+}
 .footer-col p i {
   color: var(--orange);
   margin-right: 8px;
@@ -977,4 +984,21 @@ details.accordion p {
   color: #c9d2de;
   font-size: 1.1rem;
   margin-bottom: var(--space-lg);
+}
+/* ---------- Pilot bar ---------- */
+.pilot-bar {
+  background: var(--orange);
+  color: #fff;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 16px;
+}
+.pilot-bar a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.pilot-bar a:hover {
+  color: var(--navy);
 }

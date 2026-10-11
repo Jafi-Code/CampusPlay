@@ -18,6 +18,9 @@
                 <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+27169509917"><?php echo t('footer_phone'); ?></a></p>
                 <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:hello@campusplay.co.za">hello@campusplay.co.za</a></p>
             </address>
+            <p class="footer-note">
+                CampusPlay is operating at VUT as a pilot campus. The platform is independent.
+            </p>
         </div>
 
         <div class="footer-col">
@@ -33,10 +36,11 @@
         <div class="footer-col">
             <h3>Resources</h3>
             <ul class="footer-links">
+                <li><a href="https://www.vut.ac.za/sport" target="_blank" rel="noopener noreferrer">VUT Sport</a></li>
+                <li><a href="https://www.vut.ac.za/financial-aid-and-bursaries/" target="_blank" rel="noopener noreferrer">VUT Financial Aid and Bursaries</a></li>
+                <li><a href="https://www.vut.ac.za" target="_blank" rel="noopener noreferrer">VUT Official Site</a></li>
                 <li><a href="https://www.ussa.net" target="_blank" rel="noopener noreferrer">USSA</a></li>
                 <li><a href="https://www.safa.net" target="_blank" rel="noopener noreferrer">SAFA</a></li>
-                <li><a href="https://netball-sa.co.za" target="_blank" rel="noopener noreferrer">Netball SA</a></li>
-                <li><a href="https://www.athletics.org.za" target="_blank" rel="noopener noreferrer">Athletics SA</a></li>
             </ul>
         </div>
 

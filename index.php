@@ -38,7 +38,7 @@ include 'includes/header.php';
     <div class="container">
         <div class="section-header">
             <h2>Featured Sports</h2>
-            <p>A sample of what is waiting for you on campus. Seventeen sport codes in total.</p>
+            <p>All 17 sport codes at VUT. Here are three to start.</p>
         </div>
 
         <div class="card-grid">
