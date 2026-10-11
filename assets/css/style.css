@@ -954,6 +954,18 @@ details.accordion p {
   margin: 0;
 }
 
+/* ---------- Form note ---------- */
+.form-note {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-top: var(--space-md);
+  max-width: 560px;
+}
+
+/* ---------- Alert paragraphs ---------- */
+.alert p { margin: 0; }
+.alert p + p { margin-top: 6px; }
+
 /* ---------- Join modal ---------- */
 .join-modal {
   border: none;
@@ -987,7 +999,9 @@ details.accordion p {
   place-items: center;
   cursor: pointer;
   font-size: 1rem;
-  transition: background var(--transition), color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 .join-modal-close:hover {
   background: var(--grey-light);
@@ -1181,4 +1195,24 @@ details.accordion p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* ---------- Info card step number ---------- */
+.info-card .step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* ---------- Content block spacing ---------- */
+.content-block .info-grid {
+  margin: var(--space-lg) 0;
+}
+.content-block .accordion {
+  margin-bottom: 12px;
+}
+.content-block .btn {
+  margin-top: 8px;
 }
