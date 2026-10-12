@@ -2,6 +2,8 @@
 $pageTitle = 'Sports';
 include 'includes/header.php';
 
+$sportImageBasePath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/assets/images/sports/';
+
 $sports = [
     ['name' => 'Rugby',           'cat' => 'team',         'img' => 'sport-rugby.jpg',      'desc' => 'Men\'s and women\'s teams competing at USSA level.'],
     ['name' => 'Soccer',          'cat' => 'team',         'img' => 'sport-soccer.jpg',     'desc' => 'Competitive and recreational teams. Three floodlit fields.'],
@@ -56,7 +58,7 @@ $sports = [
                     data-name="<?php echo strtolower($sport['name']); ?>">
                     <figure class="card-img">
                         <img
-                            src="assets/images/sports/<?php echo $sport['img']; ?>"
+                            src="<?php echo htmlspecialchars($sportImageBasePath . $sport['img'], ENT_QUOTES, 'UTF-8'); ?>"
                             alt="<?php echo htmlspecialchars($sport['name']); ?> at VUT"
                             loading="lazy">
                     </figure>
