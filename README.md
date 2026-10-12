@@ -6,7 +6,7 @@ CampusPlay is a web application that helps students discover which sports are av
 
 ## Live Site
 
-[Insert live URL here after deployment]
+https://campusplay-q5gf.onrender.com/
 
 ## Project Overview
 
