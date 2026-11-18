@@ -46,6 +46,7 @@ $pageTitle = $pageTitle ?? t('nav_home');
             <ul>
                 <li><a href="index.php"<?php echo $pageTitle === t('nav_home') ? ' class="active"' : ''; ?>><?php echo t('nav_home'); ?></a></li>
                 <li><a href="about.php"<?php echo $pageTitle === t('nav_about') ? ' class="active"' : ''; ?>><?php echo t('nav_about'); ?></a></li>
+                <li><a href="sports.php"<?php echo $pageTitle === t('nav_sports') ? ' class="active"' : ''; ?>><?php echo t('nav_sports'); ?></a></li>
 
                 <li class="has-dropdown">
                     <a href="how-to-join.php"<?php echo $pageTitle === t('nav_involved') ? ' class="active"' : ''; ?>>
