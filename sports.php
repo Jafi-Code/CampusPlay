@@ -1,47 +1,49 @@
 <?php
-$pageTitle = 'Sports';
+require_once __DIR__ . '/includes/lang.php';
+
+$pageTitle = t('page_sports');
 include 'includes/header.php';
 
 $sportImageBasePath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/assets/images/sports/';
 
 $sports = [
-    ['name' => 'Rugby',           'cat' => 'team',         'img' => 'sport-rugby.jpg',      'desc' => 'Men\'s and women\'s teams competing at USSA level.'],
-    ['name' => 'Soccer',          'cat' => 'team',         'img' => 'sport-soccer.jpg',     'desc' => 'Competitive and recreational teams. Three floodlit fields.'],
-    ['name' => 'Netball',         'cat' => 'team',         'img' => 'sport-netball.jpg',    'desc' => 'Fast-paced team sport. Beginner sessions available.'],
-    ['name' => 'Hockey',          'cat' => 'team',         'img' => 'sport-hockey.jpg',     'desc' => 'Astro turf and grass fields, all floodlit for evening practice.'],
-    ['name' => 'Cricket',         'cat' => 'team',         'img' => 'sport-cricket.jpg',    'desc' => 'Full programme affiliated with the Gauteng Cricket Board.'],
-    ['name' => 'Basketball',      'cat' => 'team',         'img' => 'sport-basketball.jpg', 'desc' => 'Men\'s and women\'s teams in Basketball SA leagues.'],
-    ['name' => 'Volleyball',      'cat' => 'team',         'img' => 'sport-volleyball.jpg', 'desc' => 'Indoor and beach volleyball. All skill levels welcome.'],
-    ['name' => 'Softball',        'cat' => 'team',         'img' => 'sport-softball.jpg',   'desc' => 'Inclusive club with a strong team culture.'],
-    ['name' => 'Athletics',       'cat' => 'individual',   'img' => 'sport-athletics.jpg',  'desc' => 'Track and field, throws, and cross-country.'],
-    ['name' => 'Track and Field', 'cat' => 'individual',   'img' => 'sport-track.jpg',      'desc' => 'Sprints, distance, jumps, and throws. Floodlit track.'],
-    ['name' => 'Tennis',          'cat' => 'individual',   'img' => 'sport-tennis.jpg',     'desc' => 'Three floodlit courts at the residences.'],
-    ['name' => 'Table Tennis',    'cat' => 'individual',   'img' => 'sport-tt.jpg',         'desc' => 'Competitive and recreational play for all students.'],
-    ['name' => 'Karate',          'cat' => 'individual',   'img' => 'sport-karate.jpg',     'desc' => 'Traditional training with graded belt progression.'],
-    ['name' => 'Body Building',   'cat' => 'individual',   'img' => 'sport-bodybuild.jpg',  'desc' => 'Strength and conditioning with physique coaching.'],
-    ['name' => 'Chess',           'cat' => 'individual',   'img' => 'sport-chess.jpg',      'desc' => 'Weekly meets with provincial competition opportunities.'],
-    ['name' => 'Dance',           'cat' => 'recreational', 'img' => 'sport-dance.jpg',      'desc' => 'Contemporary, hip-hop, and traditional styles.'],
-    ['name' => 'Aerobics',        'cat' => 'recreational', 'img' => 'sport-aerobics.jpg',   'desc' => 'Fitness and flexibility sessions for all levels.'],
+    ['name' => 'Rugby',           'cat' => 'team',         'img' => 'sport-rugby.jpg',      'desc' => t('sport_desc_rugby')],
+    ['name' => 'Soccer',          'cat' => 'team',         'img' => 'sport-soccer.jpg',     'desc' => t('sport_desc_soccer')],
+    ['name' => 'Netball',         'cat' => 'team',         'img' => 'sport-netball.jpg',    'desc' => t('sport_desc_netball')],
+    ['name' => 'Hockey',          'cat' => 'team',         'img' => 'sport-hockey.jpg',     'desc' => t('sport_desc_hockey')],
+    ['name' => 'Cricket',         'cat' => 'team',         'img' => 'sport-cricket.jpg',    'desc' => t('sport_desc_cricket')],
+    ['name' => 'Basketball',      'cat' => 'team',         'img' => 'sport-basketball.jpg', 'desc' => t('sport_desc_basketball')],
+    ['name' => 'Volleyball',      'cat' => 'team',         'img' => 'sport-volleyball.jpg', 'desc' => t('sport_desc_volleyball')],
+    ['name' => 'Softball',        'cat' => 'team',         'img' => 'sport-softball.jpg',   'desc' => t('sport_desc_softball')],
+    ['name' => 'Athletics',       'cat' => 'individual',   'img' => 'sport-athletics.jpg',  'desc' => t('sport_desc_athletics')],
+    ['name' => 'Track and Field', 'cat' => 'individual',   'img' => 'sport-track.jpg',      'desc' => t('sport_desc_track')],
+    ['name' => 'Tennis',          'cat' => 'individual',   'img' => 'sport-tennis.jpg',     'desc' => t('sport_desc_tennis')],
+    ['name' => 'Table Tennis',    'cat' => 'individual',   'img' => 'sport-tt.jpg',         'desc' => t('sport_desc_table_tennis')],
+    ['name' => 'Karate',          'cat' => 'individual',   'img' => 'sport-karate.jpg',     'desc' => t('sport_desc_karate')],
+    ['name' => 'Body Building',   'cat' => 'individual',   'img' => 'sport-bodybuild.jpg',  'desc' => t('sport_desc_body_building')],
+    ['name' => 'Chess',           'cat' => 'individual',   'img' => 'sport-chess.jpg',      'desc' => t('sport_desc_chess')],
+    ['name' => 'Dance',           'cat' => 'recreational', 'img' => 'sport-dance.jpg',      'desc' => t('sport_desc_dance')],
+    ['name' => 'Aerobics',        'cat' => 'recreational', 'img' => 'sport-aerobics.jpg',   'desc' => t('sport_desc_aerobics')],
 ];
 ?>
 
 <section class="page-hero">
     <div class="container">
-        <h1>Sport Codes at VUT</h1>
-        <p>All 17 sport codes available at Vaal University of Technology. Open to full-time, part-time, and non-students.</p>
+        <h1><?php echo t('sports_title'); ?></h1>
+        <p><?php echo t('sports_intro'); ?></p>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
 
-        <label for="sportSearch" class="sr-only">Search sports</label>
+        <label for="sportSearch" class="sr-only"><?php echo t('sports_search_label'); ?></label>
         <input
             type="search"
             id="sportSearch"
             class="search-input"
             placeholder="<?php echo t('search_placeholder'); ?>"
-            aria-label="Search sports">
+            aria-label="<?php echo t('sports_search_aria'); ?>">
 
         <div class="filter-bar">
             <button class="filter-btn active" data-filter="all"><?php echo t('filter_all'); ?></button>
@@ -59,7 +61,7 @@ $sports = [
                     <figure class="card-img">
                         <img
                             src="<?php echo htmlspecialchars($sportImageBasePath . $sport['img'], ENT_QUOTES, 'UTF-8'); ?>"
-                            alt="<?php echo htmlspecialchars($sport['name']); ?> at VUT"
+                            alt="<?php echo htmlspecialchars($sport['name'] . ' ' . t('sports_alt_suffix'), ENT_QUOTES, 'UTF-8'); ?>"
                             loading="lazy">
                     </figure>
                     <div class="card-body">
@@ -78,8 +80,8 @@ $sports = [
         </div>
 
         <div id="emptyState" class="empty-state" hidden>
-            <h3>No sports match your search</h3>
-            <p>Try a different search term or select a different category.</p>
+            <h3><?php echo t('sports_empty_title'); ?></h3>
+            <p><?php echo t('sports_empty_desc'); ?></p>
         </div>
 
     </div>
@@ -87,27 +89,27 @@ $sports = [
 
 <dialog id="joinModal" class="join-modal" aria-labelledby="joinModalTitle">
     <div class="join-modal-inner">
-        <button class="join-modal-close" aria-label="Close dialog">
+        <button class="join-modal-close" aria-label="<?php echo t('sports_close_dialog'); ?>">
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
 
         <span class="badge badge-open"><?php echo t('badge_open'); ?></span>
-        <h2 id="joinModalTitle">Join <span id="joinSportName">this sport</span></h2>
+        <h2 id="joinModalTitle"><?php echo t('sports_join_prefix'); ?> <span id="joinSportName"><?php echo t('sports_this_sport'); ?></span></h2>
 
         <ol class="join-steps">
-            <li>Check training times on <a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer">@vut.sports</a> to see when the team trains.</li>
-            <li>Visit the Sport Academy office at the Isak Steyl Stadium. The office is open during weekday working hours.</li>
-            <li>Ask for the coach or team manager for this sport. They will confirm the next training session and any requirements.</li>
-            <li>Bring your student card. Registration is open to full-time, part-time, and non-students.</li>
+            <li><?php echo t('sports_join_step1'); ?> <a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer">@vut.sports</a> <?php echo t('sports_join_step1b'); ?></li>
+            <li><?php echo t('sports_join_step2'); ?></li>
+            <li><?php echo t('sports_join_step3'); ?></li>
+            <li><?php echo t('sports_join_step4'); ?></li>
         </ol>
 
         <p class="join-note">
-            Once registered, the club will add you to the sport's WhatsApp group for training times, fixtures, and updates.
+            <?php echo t('sports_join_note'); ?>
         </p>
 
         <div class="join-actions">
             <a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                <i class="fa-brands fa-tiktok" aria-hidden="true"></i> View on TikTok
+                <i class="fa-brands fa-tiktok" aria-hidden="true"></i> <?php echo t('sports_view_tiktok'); ?>
             </a>
             <a href="contact.php" id="joinContactBtn" class="btn">
                 <?php echo t('nav_contact'); ?>

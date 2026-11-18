@@ -1,5 +1,7 @@
 <?php
-$pageTitle = 'Home';
+require_once __DIR__ . '/includes/lang.php';
+
+$pageTitle = t('page_home');
 include 'includes/header.php';
 ?>
 
@@ -15,7 +17,7 @@ include 'includes/header.php';
             </div>
             <button id="pwaInstall" class="pwa-install" hidden>
                 <i class="fa-solid fa-download" aria-hidden="true"></i>
-                Install CampusPlay
+                <?php echo t('home_install'); ?>
             </button>
         </div>
         <div class="hero-media">
@@ -25,9 +27,9 @@ include 'includes/header.php';
                 loop
                 playsinline
                 poster="assets/images/hero-sports.jpg"
-                aria-label="Students playing sport on campus">
+                aria-label="<?php echo t('home_video_alt'); ?>">
                 <source src="assets/video/campusplay-highlight.mp4" type="video/mp4">
-                <img src="assets/images/hero-sports.jpg" alt="Students playing sport on campus">
+                <img src="assets/images/hero-sports.jpg" alt="<?php echo t('home_video_alt'); ?>">
             </video>
         </div>
     </div>
@@ -37,43 +39,43 @@ include 'includes/header.php';
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <h2>Featured Sports</h2>
-            <p>All 17 sport codes at VUT. Here are three to start.</p>
+            <h2><?php echo t('home_featured'); ?></h2>
+            <p><?php echo t('home_featured_sub'); ?></p>
         </div>
 
         <div class="card-grid">
             <article class="card">
                 <figure class="card-img">
-                    <img src="assets/images/sports/sport-rugby.jpg" alt="Rugby players in a scrum" loading="lazy">
+                    <img src="assets/images/sports/sport-rugby.jpg" alt="<?php echo t('home_rugby_alt'); ?>" loading="lazy">
                 </figure>
                 <div class="card-body">
                     <span class="badge badge-open"><?php echo t('badge_open'); ?></span>
                     <h3>Rugby</h3>
-                    <p>Men's and women's teams competing at USSA level, with dedicated training facilities on campus.</p>
+                    <p><?php echo t('home_rugby_desc'); ?></p>
                     <a href="sports.php" class="btn btn-ghost"><?php echo t('btn_view'); ?></a>
                 </div>
             </article>
 
             <article class="card">
                 <figure class="card-img">
-                    <img src="assets/images/sports/sport-soccer.jpg" alt="Soccer player in action" loading="lazy">
+                    <img src="assets/images/sports/sport-soccer.jpg" alt="<?php echo t('home_soccer_alt'); ?>" loading="lazy">
                 </figure>
                 <div class="card-body">
                     <span class="badge badge-open"><?php echo t('badge_open'); ?></span>
                     <h3>Soccer</h3>
-                    <p>Competitive and recreational teams. Three floodlit fields available for evening practice.</p>
+                    <p><?php echo t('home_soccer_desc'); ?></p>
                     <a href="sports.php" class="btn btn-ghost"><?php echo t('btn_view'); ?></a>
                 </div>
             </article>
 
             <article class="card">
                 <figure class="card-img">
-                    <img src="assets/images/sports/sport-netball.jpg" alt="Netball player passing the ball" loading="lazy">
+                    <img src="assets/images/sports/sport-netball.jpg" alt="<?php echo t('home_netball_alt'); ?>" loading="lazy">
                 </figure>
                 <div class="card-body">
                     <span class="badge badge-beginner"><?php echo t('badge_beginner'); ?></span>
                     <h3>Netball</h3>
-                    <p>One of our fastest growing sports. Open to beginners and experienced players alike.</p>
+                    <p><?php echo t('home_netball_desc'); ?></p>
                     <a href="sports.php" class="btn btn-ghost"><?php echo t('btn_view'); ?></a>
                 </div>
             </article>
@@ -89,25 +91,25 @@ include 'includes/header.php';
 <section class="section section-alt">
     <div class="container">
         <div class="section-header">
-            <h2>How It Works</h2>
-            <p>From curiosity to your first session in three steps.</p>
+            <h2><?php echo t('home_how'); ?></h2>
+            <p><?php echo t('home_how_sub'); ?></p>
         </div>
 
         <div class="steps">
             <div class="step">
                 <div class="step-num">01</div>
-                <h3>Discover</h3>
-                <p>Browse the sport codes on offer and find one that fits your interest, schedule and experience level.</p>
+                <h3><?php echo t('home_discover'); ?></h3>
+                <p><?php echo t('home_discover_desc'); ?></p>
             </div>
             <div class="step">
                 <div class="step-num">02</div>
-                <h3>Understand</h3>
-                <p>Read what each sport requires: training times, equipment, fees and what happens at a first session.</p>
+                <h3><?php echo t('home_understand'); ?></h3>
+                <p><?php echo t('home_understand_desc'); ?></p>
             </div>
             <div class="step">
                 <div class="step-num">03</div>
-                <h3>Connect</h3>
-                <p>Use the contact form to reach the right club. You will hear back within two working days.</p>
+                <h3><?php echo t('home_connect'); ?></h3>
+                <p><?php echo t('home_connect_desc'); ?></p>
             </div>
         </div>
     </div>
@@ -117,8 +119,8 @@ include 'includes/header.php';
 <section class="section section-alt">
     <div class="container">
         <div class="section-header">
-            <h2>Training in Action</h2>
-            <p>A look at what training looks like across different sport codes at VUT.</p>
+            <h2><?php echo t('home_training'); ?></h2>
+            <p><?php echo t('home_training_sub'); ?></p>
         </div>
 
         <div class="vertical-video-grid">
@@ -126,11 +128,11 @@ include 'includes/header.php';
                 <div class="vertical-video-frame">
                     <video autoplay muted loop playsinline preload="metadata" poster="assets/images/sports/sport-rugby.jpg">
                         <source src="assets/video/vut-rugby.mp4" type="video/mp4">
-                        Your browser does not support the video element.
+                        <?php echo t('home_video_alt'); ?>
                     </video>
                 </div>
-                <h3>Rugby Training</h3>
-                <p>Weekly sessions at the main field.</p>
+                <h3><?php echo t('home_rugby_training'); ?></h3>
+                <p><?php echo t('home_rugby_training_desc'); ?></p>
             </article>
 
             <article class="vertical-video">
@@ -140,8 +142,8 @@ include 'includes/header.php';
                         Your browser does not support the video element.
                     </video>
                 </div>
-                <h3>Soccer Practice</h3>
-                <p>Floodlit evening sessions.</p>
+                <h3><?php echo t('home_soccer_training'); ?></h3>
+                <p><?php echo t('home_soccer_training_desc'); ?></p>
             </article>
 
             <article class="vertical-video">
@@ -151,14 +153,14 @@ include 'includes/header.php';
                         Your browser does not support the video element.
                     </video>
                 </div>
-                <h3>Netball Drills</h3>
-                <p>Beginner sessions available every week.</p>
+                <h3><?php echo t('home_netball_training'); ?></h3>
+                <p><?php echo t('home_netball_training_desc'); ?></p>
             </article>
         </div>
 
         <p class="video-attribution">
-            Video content courtesy of VUT Sport.
-            Follow <a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer">@vut.sports on TikTok</a> for more.
+            <?php echo t('home_video_credit'); ?>
+            <?php echo t('home_video_follow'); ?> <a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer">@vut.sports</a> <?php echo t('home_video_more'); ?>
         </p>
     </div>
 </section>
@@ -166,9 +168,9 @@ include 'includes/header.php';
 <!-- Final CTA -->
 <section class="cta-band">
     <div class="container" style="text-align:center;">
-        <h2>Ready to find your game?</h2>
-        <p>Seventeen sport codes. One form. Start training this semester.</p>
-        <a href="contact.php" class="btn btn-lg">Get Started</a>
+        <h2><?php echo t('home_cta_title'); ?></h2>
+        <p><?php echo t('home_cta_desc'); ?></p>
+        <a href="contact.php" class="btn btn-lg"><?php echo t('cta_started'); ?></a>
     </div>
 </section>
 

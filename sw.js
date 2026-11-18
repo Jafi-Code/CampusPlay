@@ -5,7 +5,7 @@
    - Everything else: stale-while-revalidate.
 */
 
-const CACHE_NAME = "campusplay-v3";
+const CACHE_NAME = "campusplay-v4";
 const OFFLINE_URL = "/campusplay/offline.html";
 
 const PRECACHE = [

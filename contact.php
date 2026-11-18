@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/lang.php';
 
-$pageTitle = t('nav_contact');
+$pageTitle = t('page_contact');
 $sportOptions = [
     'Rugby', 'Soccer', 'Netball', 'Hockey', 'Cricket',
     'Basketball', 'Volleyball', 'Softball', 'Athletics',
@@ -16,10 +16,10 @@ $values = [
 ];
 $errors = [];
 $statusMessages = [
-    'sent' => ['success', 'Thank you! Your enquiry has been sent.'],
-    'invalid' => ['error', 'Please check the form fields and try again.'],
-    'csrf' => ['error', 'This form session expired. Please reload the page and try again.'],
-    'failed' => ['error', 'We could not send your enquiry right now. Please try again or email hello@campusplay.co.za.'],
+    'sent' => ['success', t('contact_sent')],
+    'invalid' => ['error', t('contact_invalid')],
+    'csrf' => ['error', t('contact_csrf')],
+    'failed' => ['error', t('contact_failed')],
 ];
 $status = '';
 
@@ -41,16 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $status = 'csrf';
     } else {
         if (strlen($values['name']) < 2 || strlen($values['name']) > 200) {
-            $errors[] = 'Please enter your full name.';
+            $errors[] = 'error_name';
         }
         if (strlen($values['email']) > 254 || filter_var($values['email'], FILTER_VALIDATE_EMAIL) === false) {
-            $errors[] = 'Please enter a valid email address.';
+            $errors[] = 'error_email';
         }
         if (!in_array($values['sport'], $sportOptions, true)) {
-            $errors[] = 'Please select a valid sport or enquiry type.';
+            $errors[] = 'error_sport';
         }
         if (strlen($values['message']) < 10 || strlen($values['message']) > 10000) {
-            $errors[] = 'Your message must be between 10 and 10,000 characters.';
+            $errors[] = 'error_message';
         }
 
         if (!$errors) {
@@ -117,8 +117,8 @@ include 'includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <h1>Contact CampusPlay</h1>
-        <p>Questions about a sport, a club, or joining? Contact us and we will route your enquiry to the right person.</p>
+        <h1><?php echo t('contact_title'); ?></h1>
+        <p><?php echo t('contact_intro'); ?></p>
     </div>
 </section>
 
@@ -126,21 +126,21 @@ include 'includes/header.php';
     <div class="container content-block">
         <div class="info-grid">
             <div class="info-card">
-                <h3>Visit us</h3>
-                <p>Sport Academy Office<br>Isak Steyl Stadium<br>Vaal University of Technology<br>Vanderbijlpark, 1900</p>
+                <h3><?php echo t('contact_visit'); ?></h3>
+                <p><?php echo t('contact_office'); ?><br>Isak Steyl Stadium<br>Vaal University of Technology<br>Vanderbijlpark, 1900</p>
             </div>
             <div class="info-card">
-                <h3>Office hours</h3>
-                <p>Monday to Friday<br>08:00 to 16:30<br>Closed on public holidays</p>
+                <h3><?php echo t('contact_hours'); ?></h3>
+                <p><?php echo t('office_days'); ?><br>08:00 to 16:30<br><?php echo t('office_closed'); ?></p>
             </div>
             <div class="info-card">
-                <h3>Direct contact</h3>
-                <p>Telephone: +27 16 950 9917<br>Email: hello@campusplay.co.za<br>TikTok: @vut.sports</p>
+                <h3><?php echo t('contact_direct'); ?></h3>
+                <p><?php echo t('contact_phone'); ?> +27 16 950 9917<br><?php echo t('contact_email'); ?> hello@campusplay.co.za<br><?php echo t('contact_tiktok'); ?> @vut.sports</p>
             </div>
         </div>
 
-        <h2>Send us a message</h2>
-        <p>Fill in the form below and we will respond within two working days.</p>
+        <h2><?php echo t('contact_send_title'); ?></h2>
+        <p><?php echo t('contact_send_desc'); ?></p>
 
         <?php if (isset($statusMessages[$status])): ?>
             <?php [$alertType, $alertMessage] = $statusMessages[$status]; ?>
@@ -152,7 +152,7 @@ include 'includes/header.php';
         <?php if ($errors): ?>
             <div class="alert alert-error" role="alert">
                 <?php foreach ($errors as $error): ?>
-                    <p><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
+                    <p><?php echo htmlspecialchars(t($error), ENT_QUOTES, 'UTF-8'); ?></p>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
@@ -160,14 +160,14 @@ include 'includes/header.php';
         <?php if ($errors): ?>
             <div class="alert alert-error" role="alert">
                 <?php foreach ($errors as $error): ?>
-                    <p><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
+                    <p><?php echo htmlspecialchars(t($error), ENT_QUOTES, 'UTF-8'); ?></p>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
 
         <div class="alert alert-error" id="jsError" role="alert" hidden></div>
 
-        <form id="contactForm" method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME'], ENT_QUOTES, 'UTF-8'); ?>" novalidate>
+        <form id="contactForm" method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME'], ENT_QUOTES, 'UTF-8'); ?>" data-error-name="<?php echo htmlspecialchars(t('error_name'), ENT_QUOTES, 'UTF-8'); ?>" data-error-email="<?php echo htmlspecialchars(t('error_email'), ENT_QUOTES, 'UTF-8'); ?>" data-error-sport="<?php echo htmlspecialchars(t('error_sport_short'), ENT_QUOTES, 'UTF-8'); ?>" data-error-message="<?php echo htmlspecialchars(t('error_message_short'), ENT_QUOTES, 'UTF-8'); ?>" novalidate>
             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['contact_csrf'], ENT_QUOTES, 'UTF-8'); ?>">
 
             <div class="form-group">
@@ -183,10 +183,11 @@ include 'includes/header.php';
             <div class="form-group">
                 <label for="sport"><?php echo t('form_sport'); ?> *</label>
                 <select id="sport" name="sport" required>
-                    <option value="">Select a sport</option>
+                    <option value=""><?php echo t('contact_select_sport'); ?></option>
                     <?php foreach ($sportOptions as $option): ?>
+                        <?php $optionLabel = $option === 'Bursary Enquiry' ? t('contact_bursary') : $option; ?>
                         <option value="<?php echo htmlspecialchars($option, ENT_QUOTES, 'UTF-8'); ?>"<?php echo $values['sport'] === $option ? ' selected' : ''; ?>>
-                            <?php echo htmlspecialchars($option, ENT_QUOTES, 'UTF-8'); ?>
+                            <?php echo htmlspecialchars($optionLabel, ENT_QUOTES, 'UTF-8'); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -200,7 +201,7 @@ include 'includes/header.php';
             <button type="submit" class="btn btn-lg"><?php echo t('form_send'); ?></button>
         </form>
 
-        <p class="form-note">We use your details only to respond to your enquiry. We do not share them with third parties.</p>
+        <p class="form-note"><?php echo t('contact_privacy'); ?></p>
     </div>
 </section>
 

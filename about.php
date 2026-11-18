@@ -1,61 +1,63 @@
 <?php
-$pageTitle = 'About';
+require_once __DIR__ . '/includes/lang.php';
+
+$pageTitle = t('page_about');
 include 'includes/header.php';
 ?>
 
 <section class="page-hero">
     <div class="container">
-        <h1>About CampusPlay</h1>
-        <p>Making it easy for every student to find a sport, understand what it takes, and actually join.</p>
+        <h1><?php echo t('about_title'); ?></h1>
+        <p><?php echo t('about_subtitle'); ?></p>
     </div>
 </section>
 
 <section class="section">
     <div class="container content-block">
 
-        <h2>The problem we solve</h2>
+        <h2><?php echo t('about_problem'); ?></h2>
         <p>
-            Every university offers sport. Most students never join. The reason is rarely the sport itself. It is the gap between wanting to play and knowing how to start.
+            <?php echo t('about_problem_p1'); ?>
         </p>
         <p>
-            At VUT, seventeen sport codes are available. But for a first-year student walking onto campus, that information is scattered. It lives on notice boards, in word of mouth, and on social media pages that assume you already know what you are looking for.
+            <?php echo t('about_problem_p2'); ?>
         </p>
 
-        <h2>What CampusPlay does</h2>
+        <h2><?php echo t('about_what'); ?></h2>
         <p>
-            CampusPlay is a discovery platform. It gives every student a single place to:
+            <?php echo t('about_what_intro'); ?>
         </p>
         <ul>
-            <li>See every sport code available at their campus</li>
-            <li>Understand what each sport requires before they commit</li>
-            <li>Know exactly who to contact and what to expect</li>
-            <li>Join a club with confidence, not guesswork</li>
+            <li><?php echo t('about_what_1'); ?></li>
+            <li><?php echo t('about_what_2'); ?></li>
+            <li><?php echo t('about_what_3'); ?></li>
+            <li><?php echo t('about_what_4'); ?></li>
         </ul>
 
-        <h2>Why VUT first</h2>
+        <h2><?php echo t('about_why'); ?></h2>
         <p>
-            CampusPlay is starting at Vaal University of Technology because VUT has everything a pilot campus needs: an established sport academy, seventeen active sport codes, and a student body that wants to participate but does not always know how.
+            <?php echo t('about_why_p1'); ?>
         </p>
         <p>
-            The platform is independent of VUT. It is not owned or operated by the university. It operates at VUT as its pilot campus, which means every feature you see here was designed with VUT students in mind, tested against real VUT sport data, and built to be extended to other campuses.
+            <?php echo t('about_why_p2'); ?>
         </p>
 
-        <h2>How it works</h2>
+        <h2><?php echo t('about_how'); ?></h2>
         <p>
-            Three steps. Nothing more.
+            <?php echo t('about_how_intro'); ?>
         </p>
         <ol>
-            <li><strong>Discover.</strong> Browse the full list of sport codes and filter by what fits you.</li>
-            <li><strong>Understand.</strong> Read what each sport requires, from training times to equipment and experience level.</li>
-            <li><strong>Connect.</strong> Use the contact form to reach the right club. You will hear back within two working days.</li>
+            <li><strong><?php echo t('home_discover'); ?>.</strong> <?php echo t('about_step_discover'); ?></li>
+            <li><strong><?php echo t('home_understand'); ?>.</strong> <?php echo t('about_step_understand'); ?></li>
+            <li><strong><?php echo t('home_connect'); ?>.</strong> <?php echo t('about_step_connect'); ?></li>
         </ol>
 
-        <h2>Our approach</h2>
+        <h2><?php echo t('about_approach'); ?></h2>
         <p>
-            We do not run clubs. We do not coach. We do not replace the people who make VUT sport happen.
+            <?php echo t('about_approach_p1'); ?>
         </p>
         <p>
-            We do one thing: we make it easy for a student to go from curious to committed. That is the entire product.
+            <?php echo t('about_approach_p2'); ?>
         </p>
 
     </div>
@@ -63,11 +65,11 @@ include 'includes/header.php';
 
 <section class="section section-alt">
     <div class="container content-block">
-        <h2>Questions?</h2>
+        <h2><?php echo t('about_questions'); ?></h2>
         <p>
-            If you run a sport club at VUT and want your details listed here, or if you are a student with a question about a specific sport, reach out through the contact page.
+            <?php echo t('about_questions_desc'); ?>
         </p>
-        <a href="contact.php" class="btn">Contact Us</a>
+        <a href="contact.php" class="btn"><?php echo t('cta_contact_us'); ?></a>
     </div>
 </section>
 

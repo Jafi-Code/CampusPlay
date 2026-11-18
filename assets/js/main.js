@@ -262,21 +262,27 @@
       const errors = [];
 
       if (name.length < 2) {
-        errors.push("Please enter your full name.");
+        errors.push(form.dataset.errorName);
       }
       if (!email.includes("@") || !email.includes(".")) {
-        errors.push("Please enter a valid email address.");
+        errors.push(form.dataset.errorEmail);
       }
       if (!sport) {
-        errors.push("Please select a sport.");
+        errors.push(form.dataset.errorSport);
       }
       if (message.length < 10) {
-        errors.push("Message must be at least 10 characters.");
+        errors.push(form.dataset.errorMessage);
       }
 
       if (errors.length) {
         event.preventDefault();
-        errorBox.innerHTML = errors.map((e) => "<p>" + e + "</p>").join("");
+        errorBox.replaceChildren(
+          ...errors.map((message) => {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = message;
+            return paragraph;
+          }),
+        );
         errorBox.hidden = false;
         errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
       } else {

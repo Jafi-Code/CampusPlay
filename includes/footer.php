@@ -19,7 +19,7 @@
                 <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:hello@campusplay.co.za">hello@campusplay.co.za</a></p>
             </address>
             <p class="footer-note">
-                CampusPlay is operating at VUT as a pilot campus. The platform is independent.
+                <?php echo t('footer_note'); ?>
             </p>
         </div>
 
@@ -34,10 +34,10 @@
         </div>
 
         <div class="footer-col">
-            <h3>Resources</h3>
+            <h3><?php echo t('footer_resources'); ?></h3>
             <ul class="footer-links">
-                <li><a href="https://www.vut.ac.za" target="_blank" rel="noopener noreferrer">VUT Official Site</a></li>
-                <li><a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer">VUT Sport on TikTok</a></li>
+                <li><a href="https://www.vut.ac.za" target="_blank" rel="noopener noreferrer"><?php echo t('footer_vut'); ?></a></li>
+                <li><a href="https://www.tiktok.com/@vut.sports" target="_blank" rel="noopener noreferrer"><?php echo t('footer_vut_sport'); ?></a></li>
                 <li><a href="https://www.ussa.net" target="_blank" rel="noopener noreferrer">USSA</a></li>
                 <li><a href="https://www.safa.net" target="_blank" rel="noopener noreferrer">SAFA</a></li>
             </ul>
@@ -52,7 +52,7 @@
     </div>
 </footer>
 
-<button id="backToTop" class="back-to-top" aria-label="Back to top">
+<button id="backToTop" class="back-to-top" aria-label="<?php echo t('aria_back_top'); ?>">
     <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
 </button>
 
